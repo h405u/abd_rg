@@ -8,7 +8,7 @@ This is a toy model that **abd**uctively learns **r**egular **g**rammars from ra
 
 ## Environment
 
-This model is tested under macOS 14.3 with the following specifications.
+This model has been tested under macOS 14.3 with the following specifications.
 
 - python 3.11.4
 - pytorch 2.1.0
