@@ -4,11 +4,11 @@ This is a toy model that **abd**uctively learns **r**egular **g**rammars from ra
 
 > The hottest new programming language is English
 >
-> - *Andrej Karpathy*
+> *Andrej Karpathy*
 
 ## Environment
 
-This model are tested under macOS 14.3 with the following specifications.
+This model is tested under macOS 14.3 with the following specifications.
 
 - python 3.11.4
 - pytorch 2.1.0
