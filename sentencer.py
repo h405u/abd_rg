@@ -64,6 +64,16 @@ def generate_right_regular_grammars(N, T, P):
                     seen_grammars.add(serialized_grammar)
                     yield grammar
 
+def normalize(sentence):
+    memo = {}
+    normalized = []
+    counter = 0
+    for word in sentence:
+        if word not in memo:
+            memo[word] = f'a{counter}'
+            counter += 1
+        normalized.append(memo[word])
+    return tuple(normalized)
 
 def generate_sentences_from_grammar(grammar, max_length):
     current_sentences = {('S0',)}  # start with the initial nonterminal
@@ -100,8 +110,9 @@ def generate_unique_sentences_and_grammar_map(generator, generate_sentences_from
 
     for _, grammar in enumerate(generator):
         if len(grammar['S0']) < 3:
-            generated_sentences = generate_sentences_from_grammar(grammar, max_length=12)  # Assuming max_length=12
+            generated_sentences = generate_sentences_from_grammar(grammar, max_length=12)
             for sentence in generated_sentences:
+                sentence = normalize(sentence)
                 if sentence and sentence not in sentence_to_grammar_map:  # Check for non-empty and uniqueness
                     sentence_to_grammar_map[sentence] = grammar
                     sentences.append(sentence) # Add unique sentence to the list
