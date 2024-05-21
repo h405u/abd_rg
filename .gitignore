@@ -2,3 +2,4 @@ data/
 __pycache__/
 assets/
 exp_data/
+.DS_Store
